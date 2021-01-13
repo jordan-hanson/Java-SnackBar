@@ -61,4 +61,11 @@ public class Snack {
         this.maxId = id;
     }
 
+    @Override
+    public String toString(){
+        String rtnStr =
+        "Id: " + ", Name: " + name + " , Quantity: " + quantity + " , Cost: " + cost + " , VendingMachineId: " + vendingMachineId;
+        return rtnStr;
+    };
+
 }
