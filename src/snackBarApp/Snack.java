@@ -4,20 +4,22 @@ public class Snack {
     private static int maxId = 0;
     private int id;
     private String name;
-    private int quantity;
-    private double cost;
+    private int quantity = 0;
+    private int cost = 0;
     private static int vendingMachineId = 125;
+    private int total;
 
 
 
     //Constructor
-    public Snack(String name, int quantity, double cost) {
+    public Snack(String name, int quantity, int cost) {
         maxId++;
         id = maxId;
         this.name = name;
         this.quantity = quantity;
         this.cost = cost;
         this.vendingMachineId = vendingMachineId;
+        this.total = quantity * cost;
     }
 
 
@@ -40,6 +42,9 @@ public class Snack {
     public int getVendingMachineId() {
         return this.vendingMachineId;
     }
+    public int getTotal(){
+        return this.total;
+    }
 
     //Setters
     public void setId(int id){
@@ -48,11 +53,18 @@ public class Snack {
     public void setName(String name){
         this.name = name;
     }
+//    public void setQuantity(int quantity){
+//        if(this.quantity < quantity) {
+//            this.quantity = quantity;
+//        } else {
+//            this.quantity = quantity;
+//        };
+//    }
     public void setQuantity(int quantity){
         this.quantity = quantity;
     }
-    public void setCost(double amount){
-        this.cost = amount;
+    public void setCost(int cost){
+        this.cost = cost;
     }
     public void setVendingMachineId(int vendingMachineId) {
         this.vendingMachineId = vendingMachineId;
@@ -60,11 +72,20 @@ public class Snack {
     public void setMaxId(int id){
         this.maxId = id;
     }
+    public void setTotal(){
+        this.total = total;
+    }
 
     @Override
     public String toString(){
         String rtnStr =
-        "Id: " + ", Name: " + name + " , Quantity: " + quantity + " , Cost: " + cost + " , VendingMachineId: " + vendingMachineId;
+        "Id: " + id + "\n"
+                + "Name: " + name + "\n"
+                + "Quantity: " + quantity + "\n"
+                + "Cost: " + cost + "\n"
+                + "VendingMachineId: " + vendingMachineId + "\n"
+                + "Total: " + total + "\n"
+                + "__________________";
         return rtnStr;
     };
 
